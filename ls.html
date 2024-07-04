@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luminary Solutions | Exclusive Business Enhancement</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@300;400;600;700&family=Montserrat:wght@200;300;400;600&display=swap');
+        
+        :root {
+            --primary-color: #0c0c0c;
+            --secondary-color: #b8860b;
+            --text-color: #333;
+            --background-color: #f8f8f8;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 2rem 0;
+            position: relative;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant', serif;
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .hero {
+            background: url('/api/placeholder/1920/1080') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant', serif;
+            font-size: 4rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards 0.5s;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards 0.7s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards 0.9s;
+        }
+
+        .cta:hover {
+            background-color: #fff;
+            color: var(--secondary-color);
+        }
+
+        .services {
+            padding: 6rem 0;
+        }
+
+        .service {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .service.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-content {
+            flex: 1;
+            padding-right: 4rem;
+        }
+
+        .service h2 {
+            font-family: 'Cormorant', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .service p {
+            margin-bottom: 2rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .service-image {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .service-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .service-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .service-image:hover img {
+            transform: scale(1.1);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant', serif;
+            font-size: 2rem;
+            font-weight: 300;
+        }
+
+        .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-left: 1rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .header-content, .service {
+                flex-direction: column;
+            }
+            nav ul {
+                margin-top: 1rem;
+            }
+            nav ul li {
+                margin-left: 0;
+                margin-right: 1rem;
+            }
+            .service-content {
+                padding-right: 0;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">Luminary Solutions</div>
+            <nav>
+                <ul>
+                    <li><a href="#crm">CRM & Pipeline</a></li>
+                    <li><a href="#marketing">Marketing</a></li>
+                    <li><a href="#booking">Booking</a></li>
+                    <li><a href="#website">Website & Funnel</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Elevate Your Business Essence</h1>
+            <p>Bespoke solutions crafted for visionary enterprises</p>
+            <a href="#" class="cta">Explore Our Expertise</a>
+        </div>
+    </section>
+
+    <section class="services container">
+        <div id="crm" class="service">
+            <div class="service-content">
+                <h2>CRM & Pipeline Mastery</h2>
+                <p>Harness the power of relationships with our meticulously designed CRM and pipeline management system. Tailored for discerning businesses, our solution offers unparalleled insights and automation, transforming client interactions into lasting partnerships.</p>
+                <a href="#" class="cta">Discover the Potential</a>
+            </div>
+            <div class="service-image">
+                <img src="/api/placeholder/800/600" alt="CRM Dashboard">
+            </div>
+        </div>
+
+        <div id="marketing" class="service">
+            <div class="service-image">
+                <img src="/api/placeholder/800/600" alt="Marketing Automation">
+            </div>
+            <div class="service-content">
+                <h2>Precision Marketing Automation</h2>
+                <p>Elevate your brand's presence with our sophisticated marketing automation platform. Leveraging cutting-edge AI and data analytics, we craft personalized campaigns that resonate with your elite clientele, ensuring unparalleled engagement and ROI.</p>
+                <a href="#" class="cta">Elevate Your Strategy</a>
+            </div>
+        </div>
+
+        <div id="booking" class="service">
+            <div class="service-content">
+                <h2>Seamless Appointment Orchestration</h2>
+                <p>Redefine client engagement with our bespoke appointment booking system. Designed for businesses that value time and precision, our platform offers a frictionless scheduling experience, harmonizing efficiency with sophistication.</p>
+                <a href="#" class="cta">Streamline Your Schedule</a>
+            </div>
+            <div class="service-image">
+                <img src="/api/placeholder/800/600" alt="Appointment Booking">
+            </div>
+        </div>
+
+        <div id="website" class="service">
+            <div class="service-image">
+                <img src="/api/placeholder/800/600" alt="Website Builder">
+            </div>
+            <div class="service-content">
+                <h2>Visionary Website & Funnel Architect</h2>
+                <p>Craft digital masterpieces with our advanced website and funnel builder. Merging aesthetic excellence with conversion-focused design, our platform empowers you to create online experiences that captivate, engage, and convert your distinguished audience.</p>
+                <a href="#" class="cta">Begin Your Masterpiece</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Luminary Solutions</div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 Luminary Solutions. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const services = document.querySelectorAll('.service');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            services.forEach(service => observer.observe(service));
+        });
+    </script>
+</body>
+</html>
